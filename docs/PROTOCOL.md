@@ -26,3 +26,10 @@ MIMIC access: https://mimic.mit.edu/docs/gettingstarted/
 MIMIC demo: https://physionet.org/content/mimic-iv-demo/2.2/
 Official derived-concept code: https://github.com/MIT-LCP/mimic-code
 Clinical definition and concept-code version must be reviewed and pinned before label implementation.
+
+## Implemented processing prototype
+
+The versioned, provisional single-landmark creatinine-rise specification is in
+[MIMIC_PIPELINE.md](MIMIC_PIPELINE.md). It is tested on invented fixtures only.
+Outstanding clinical review items above remain required; the pipeline marks every
+row clinical_ready=False and does not train a model.

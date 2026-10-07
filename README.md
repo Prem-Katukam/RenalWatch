@@ -41,7 +41,7 @@ docker run --rm -p 127.0.0.1:8000:8000 renalwatch:0.1
 The image generates a synthetic model during the build. Dependencies have compatibility ranges; a verified lockfile remains a subsequent environment milestone.
 
 ## Not yet implemented
-Clinical cohort/labels; MIMIC adapter; real clinical training; SHAP; clinical NLP; active learning; Power BI; Azure ingestion and AKS. No clinical accuracy, HIPAA compliance, business savings, or latency target is claimed.
+Validated clinical cohort/labels; real clinical training; SHAP; clinical NLP; active learning; Power BI; Azure ingestion and AKS. No clinical accuracy, HIPAA compliance, business savings, or latency target is claimed.
 
 See docs/PROTOCOL.md and docs/SETUP_CHECKLIST.md before working with real data.
 
@@ -50,3 +50,11 @@ See docs/PROTOCOL.md and docs/SETUP_CHECKLIST.md before working with real data.
 After training the demo model, start the API with the existing Uvicorn command and open http://127.0.0.1:8000/. No additional packages are needed. The dashboard includes editable synthetic observations, separate-unit trend charts, sample scenarios, service status, and the actual `/predict-demo` response. All times in the editor are UTC. A negative hours-before value means after prediction time. Scores concern a fabricated outcome, not AKI risk.
 
 Changing inputs clears the previous result. Late or out-of-window results are excluded from charts, and the API independently applies its eligibility checks. The dashboard stores no inputs in browser storage and uses no external scripts.
+
+## MIMIC processing prototype
+
+A local CSV/gzip adapter, invented MIMIC-shaped fixtures, patient-level splits and
+a provisional creatinine-rise endpoint are now implemented. Real-data validation,
+dialysis exclusions and clinical training remain pending. Nothing changes the
+synthetic dashboard model. See [the processing guide](docs/MIMIC_PIPELINE.md) for
+Windows commands, required tables, endpoint rules and limitations.
