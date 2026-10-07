@@ -1,0 +1,10 @@
+.git
+.venv
+data
+artifacts
+.env
+.env.*
+__pycache__
+mlruns
+mlartifacts
+mlflow.db

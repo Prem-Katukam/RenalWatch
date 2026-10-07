@@ -1,0 +1,9 @@
+{
+  "prediction_time": "2026-01-02T12:00:00+00:00",
+  "observations": [
+    {"name": "creatinine", "value": 1.0, "unit": "mg/dL", "measured_at": "2026-01-02T06:00:00+00:00", "available_at": "2026-01-02T06:15:00+00:00"},
+    {"name": "creatinine", "value": 1.1, "unit": "mg/dL", "measured_at": "2026-01-02T10:00:00+00:00", "available_at": "2026-01-02T10:15:00+00:00"},
+    {"name": "map", "value": 80, "unit": "mmHg", "measured_at": "2026-01-02T11:00:00+00:00", "available_at": "2026-01-02T11:00:00+00:00"},
+    {"name": "heart_rate", "value": 85, "unit": "bpm", "measured_at": "2026-01-02T11:00:00+00:00", "available_at": "2026-01-02T11:00:00+00:00"}
+  ]
+}

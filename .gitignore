@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+data/
+artifacts/
+mlruns/
+mlartifacts/
+mlflow.db*
+*.joblib
