@@ -4,6 +4,7 @@ from typing import Literal
 import joblib
 import pandas as pd
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field, ConfigDict
 from .features import FEATURES, build_features
 
@@ -45,3 +46,7 @@ def predict(request: Request):
     score = float(_model.predict_proba(pd.DataFrame([features], columns=FEATURES))[0, 1])
     return {'mode': 'synthetic_demo_only', 'status': 'scored', 'demo_score': score,
         'meaning': 'Probability of a fabricated outcome, NOT kidney-injury risk', 'warnings': warnings}
+
+@app.get('/', include_in_schema=False)
+def dashboard():
+    return FileResponse(Path(__file__).with_name('dashboard.html'), media_type='text/html')

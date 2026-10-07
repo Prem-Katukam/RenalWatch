@@ -44,3 +44,9 @@ The image generates a synthetic model during the build. Dependencies have compat
 Clinical cohort/labels; MIMIC adapter; real clinical training; SHAP; clinical NLP; active learning; Power BI; Azure ingestion and AKS. No clinical accuracy, HIPAA compliance, business savings, or latency target is claimed.
 
 See docs/PROTOCOL.md and docs/SETUP_CHECKLIST.md before working with real data.
+
+## Local dashboard
+
+After training the demo model, start the API with the existing Uvicorn command and open http://127.0.0.1:8000/. No additional packages are needed. The dashboard includes editable synthetic observations, separate-unit trend charts, sample scenarios, service status, and the actual `/predict-demo` response. All times in the editor are UTC. A negative hours-before value means after prediction time. Scores concern a fabricated outcome, not AKI risk.
+
+Changing inputs clears the previous result. Late or out-of-window results are excluded from charts, and the API independently applies its eligibility checks. The dashboard stores no inputs in browser storage and uses no external scripts.
